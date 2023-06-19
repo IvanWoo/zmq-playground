@@ -28,8 +28,8 @@ start wireshark and capture your loopback
 send some messages over the wire
 
 ```sh
-pdm run python server.py
-pdm run python client.py
+pdm run simple/server.py
+pdm run simple/client.py
 ```
 
 decode the tcp packets as zmtp
@@ -37,3 +37,39 @@ decode the tcp packets as zmtp
 ![where is decode as](./assets/where_is_decode_as.png)
 
 ![decode as modal](./asserts/../assets/decode_as_modal.png)
+
+## patterns
+
+### request-reply
+
+```sh
+pdm run simple/server.py
+```
+
+```sh
+pdm run simple/client.py
+```
+
+### pub-sub
+
+#### one-to-many
+
+single publisher and multiple subscribers
+
+```sh
+pdm run pub_sub/sub.py
+```
+
+```sh
+pdm run pub_sub/pub.py
+```
+
+#### many-to-many
+
+```sh
+pdm run xpub_xsub/zproxy.py
+```
+
+```sh
+pdm run xpub_xsub/ztest.py
+```
